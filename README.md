@@ -1,5 +1,7 @@
 # My Personal Portfolio Website
 
+---
+
 This repository contains my personal portfolio website, built and hosted with **GitHub Pages**. The site is designed to showcase who I am, what I’ve worked on, and how to get in touch with me.
 
 ### ✨ What’s Inside
