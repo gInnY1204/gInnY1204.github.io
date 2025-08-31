@@ -1,3 +1,5 @@
 # gInnY1204.github.io
 
-ginny kim
+This is my website
+https://ginny1204.github.io/
+
