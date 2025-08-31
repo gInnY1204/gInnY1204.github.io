@@ -1,11 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GinnyKimCV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 포트폴리오</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav {
+      background: #444;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .project {
+      background: #fff;
+      margin: 1rem 0;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #222;
+      color: #fff;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-    
+  <header>
+    <h1>홍길동</h1>
+    <p>AI & Robotics Developer | 인공지능학과</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>안녕하세요! 저는 인공지능과 로보틱스를 연구하는 개발자 홍길동입니다.  
+       로봇공학 동아리 활동부터 강화학습 프로젝트까지 다양한 경험을 쌓아왔습니다.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>🚀 강화학습 기반 최적 경로 탐색</h3>
+      <p>PyTorch와 Gym 환경을 활용하여 최적 경로 문제를 해결하는 모델을 구현했습니다.</p>
+      <a href="https://github.com/yourname/project1">깃허브 보기</a>
+    </div>
+    <div class="project">
+      <h3>🤖 로봇 미로 탈출 게임</h3>
+      <p>EV3 로봇을 활용해 자율주행 알고리즘을 적용한 미로 탈출 게임을 제작했습니다.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📧 이메일: your.email@example.com</p>
+    <p>🔗 GitHub: <a href="https://github.com/yourname">github.com/yourname</a></p>
+    <p>💼 LinkedIn: <a href="https://linkedin.com/in/yourname">linkedin.com/in/yourname</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Hong Gil-dong</p>
+  </footer>
 </body>
 </html>
+
