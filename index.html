@@ -1,99 +1,204 @@
-<!DOCTYPE html>
-<html lang="ko">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>내 포트폴리오</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Masters student in AI & Robotics, showcasing research, projects, and publications." />
   <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background: #f9f9f9;
-      color: #333;
+    :root{
+      --muted:#475569;
+      --accent:#6366f1;
     }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#1e293b;
+      background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 25%, #a18cd1 50%, #fbc2eb 75%, #8fd3f4 100%);
+      background-size: 400% 400%;
+      animation: aurora 15s ease infinite;
     }
-    header h1 {
-      margin: 0;
+    @keyframes aurora {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
     }
-    nav {
-      background: #444;
-      padding: 1rem;
-      text-align: center;
+    .container{max-width:980px;margin:0 auto;padding:28px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    .brand{display:flex;gap:16px;align-items:center}
+    .logo{
+      width:100px;
+      height:100px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
     }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
     }
-    section {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
+    nav a{color:white;text-decoration:none;margin-left:18px;font-size:15px;font-weight:500}
+    nav a:hover{color:#fffccf}
+    section{
+      margin-top:28px;
+      padding:24px;
+      background: rgba(255,255,255,0.85);
+      border-radius:14px;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
     }
-    .project {
-      background: #fff;
-      margin: 1rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #222;
-      color: #fff;
-      margin-top: 2rem;
-    }
+    h1,h2,h3{margin-top:0}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .skill{background:#eef2ff;color:#4338ca;padding:6px 10px;border-radius:999px;font-size:13px}
+    .project-grid{display:grid;grid-template-rows:auto;gap:20px;margin-top:16px}
+    .project{background:#fdfdfd;padding:20px;border-radius:12px;box-shadow:0 2px 6px rgba(0,0,0,0.05);display:flex;flex-direction:column;gap:10px}
+    .project h3{margin:0;font-size:20px;color:#111}
+    .project .date{font-size:13px;color:var(--muted)}
+    .project .topic{font-weight:600;color:#334155}
+    .project .desc{color:var(--muted);font-size:14px}
+    .project .links a{color:var(--accent);text-decoration:none;margin-right:10px;font-size:14px}
+    footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
+    @media(max-width:740px){nav a{display:none}}
   </style>
 </head>
 <body>
-  <header>
-    <h1>홍길동</h1>
-    <p>AI & Robotics Developer | 인공지능학과</p>
-  </header>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="profile.png" alt="Profile Photo">
+        </div>
+        <div style="font-size:1.3em;">
+          <div style="font-weight:700; font-size:1.5em;">Ginny Kim</div>
+          <div style="font-size:14px; color:white">M.S. Student • AI</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p style="line-height:1.5;">
+        I am a first-year Master’s student in AIGS at UNIST, advised by Professor Jeong-hwan Jeon.
+      </p>
+      <p style="line-height:1.5;">
+        I received my Bachelors degree in Artificial Intelligence at Catholic University of Korea. Previously, I spent some time at Applied AI Lab as an undergraduate research intern, where I developed reinforcement learning algorithms for ride-sharing using Seoul city bus stop datasets.
+      </p>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>안녕하세요! 저는 인공지능과 로보틱스를 연구하는 개발자 홍길동입니다.  
-       로봇공학 동아리 활동부터 강화학습 프로젝트까지 다양한 경험을 쌓아왔습니다.</p>
-  </section>
+      <div class="buttons" style="margin-top:30px; display:flex; gap:120px; justify-content:center;">
+        <a class="btn" href="mailto:whensick1204@gmail.com" target="_blank">Email</a>
+        <a class="btn" href="cv.pdf" target="_blank">CV</a>
+        <a class="btn" href="https://github.com/gInnY1204" target="_blank">GitHub</a>
+        <a class="btn" href="https://www.notion.so/Ginny-Kim-s-Notion-1ef29dbc784680758ca2fd38e8059b9e" target="_blank">Notion</a>
+      </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>🚀 강화학습 기반 최적 경로 탐색</h3>
-      <p>PyTorch와 Gym 환경을 활용하여 최적 경로 문제를 해결하는 모델을 구현했습니다.</p>
-      <a href="https://github.com/yourname/project1">깃허브 보기</a>
-    </div>
-    <div class="project">
-      <h3>🤖 로봇 미로 탈출 게임</h3>
-      <p>EV3 로봇을 활용해 자율주행 알고리즘을 적용한 미로 탈출 게임을 제작했습니다.</p>
-    </div>
-  </section>
+    <style>
+      .btn {
+        display:inline-block;
+        padding:10px 16px;
+        border-radius:8px;
+        text-decoration:none;
+        font-weight:600;
+        color:white;
+        background: linear-gradient(90deg, #6366f1, #8b5cf6);
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: linear-gradient(90deg, #8b5cf6, #6366f1);
+      }
+    </style>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>📧 이메일: your.email@example.com</p>
-    <p>🔗 GitHub: <a href="https://github.com/yourname">github.com/yourname</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com/in/yourname">linkedin.com/in/yourname</a></p>
-  </section>
+    <!-- Research Vision -->
+    <section id="research">
+      <h2>Research Vision</h2>
+      <p style="line-height:1.5;">
+        My research focuses on developing AI and robotics systems capable of complex manipulation and long-horizon planning tasks.
+        I am interested in reinforcement learning, robot learning, and real-world applications of intelligent robotics.
+      </p>
+      <ul style="line-height:1.5;">
+        <li>Which low-level motor control skills should be pretrained for robots?</li>
+        <li>How can these skills be composed to perform long-horizon tasks?</li>
+        <li>How to effectively transfer simulation-learned policies to real-world robots?</li>
+      </ul>
+    </section>
 
-  <footer>
-    <p>© 2025 Hong Gil-dong</p>
-  </footer>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Selected Projects</h2>
+      <div class="project-grid">
+
+        <div class="project">
+          <h3>RL-based Optimal Route Search</h3>
+          <div class="date">2024.05 – 2024.08</div>
+          <div class="topic">Reinforcement Learning for logistics</div>
+          <div class="desc">
+            Custom Gym environment + PyTorch to find optimal delivery routes on real road networks.
+          </div>
+          <div><strong>Role:</strong> Lead developer, RL modeling & evaluation</div>
+          <div class="skills">
+            <div class="skill">Python</div>
+            <div class="skill">PyTorch</div>
+            <div class="skill">OpenAI Gym</div>
+          </div>
+          <div class="links">
+            <a href="https://github.com/gInnY1204/rl-routing" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+        <div class="project">
+          <h3>EV3 Maze Robot</h3>
+          <div class="date">2023.03 – 2023.06</div>
+          <div class="topic">Autonomous robotics</div>
+          <div class="desc">
+            Developed a maze-solving EV3 robot using local planning algorithms and sensor feedback.
+          </div>
+          <div><strong>Role:</strong> Robot control & path planning</div>
+          <div class="skills">
+            <div class="skill">C</div>
+            <div class="skill">Robotics</div>
+            <div class="skill">Path Planning</div>
+          </div>
+          <div class="links">
+            <a href="https://github.com/gInnY1204/ev3-maze" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul>
+        <li><strong>Paper Title 1</strong>, Conference, 2024. Summary / <a href="#">Link</a></li>
+        <li><strong>Paper Title 2</strong>, Journal, 2023. Summary / <a href="#">Link</a></li>
+        <li><strong>Paper Title 3</strong>, Conference, 2022. Summary / <a href="#">Link</a></li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/gInnY1204" target="_blank">github.com/gInnY1204</a></p>
+      <p><strong>LinkedIn:</strong> <a href="#">LinkedIn Profile</a></p>
+    </section>
+
+    <footer>
+      © 2025 Ginny Kim — Built with GitHub Pages
+    </footer>
+  </div>
 </body>
 </html>
-
